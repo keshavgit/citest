@@ -17,10 +17,10 @@ public class TestWebDemo {
 	@Before
 	public void setUp() throws Exception
 	{
-//		driver=new FirefoxDriver(); 
-		DesiredCapabilities cap = new DesiredCapabilities();
-    	cap = DesiredCapabilities.firefox();
-		driver = new RemoteWebDriver(new URL("http://172.168.0.114:5555/wd/hub"),cap);
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap.setCapability("jenkins.label","redhat5 && amd64");
+		WebDriver driver = new RemoteWebDriver(new URL("http://172.168.0.114:4444/wd/hub"), cap);
+		// driver = new RemoteWebDriver(new URL("http://172.168.0.114:5555/wd/hub"),cap);
 	}
 	@Test
 	public void testWebDemo() throws InterruptedException, Exception
