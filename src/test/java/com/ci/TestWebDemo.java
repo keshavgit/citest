@@ -17,7 +17,7 @@ public class TestWebDemo {
 	@Before
 	public void setUp() throws Exception
 	{
-		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		DesiredCapabilities cap = DesiredCapabilities.internetExplorer();
 		cap.setCapability("jenkins.label","redhat5 && amd64");
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		// driver = new RemoteWebDriver(new URL("http://172.168.0.114:5555/wd/hub"),cap);
@@ -27,9 +27,14 @@ public class TestWebDemo {
 	{
 		
 //		driver.get("https://www.axisbank.co.in/");
+		try{
 		driver.get("https://www.google.co.in/");
 		assertEquals("Google",driver.getTitle());
 		driver.findElement(By.id("gbqfq")).sendKeys("Selenium");
+		}catch(NoSuchElementException e)
+		{
+			System.out.println("element not recognized");
+		}
 		Thread.sleep(6000);
 	}
 	//@Ignore
