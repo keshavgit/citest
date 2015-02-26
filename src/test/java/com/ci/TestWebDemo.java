@@ -20,8 +20,7 @@ public class TestWebDemo {
 		DesiredCapabilities cap = new DesiredCapabilities();
     	        cap = DesiredCapabilities.firefox();
     	        cap.setBrowserName("firefox");
-    	        cap.setPlatform(Platform.WINDOWS);
-		cap.setCapability("jenkins.label","redhat5 && amd64");
+    	     	cap.setCapability("jenkins.label","redhat5 && amd64");
 		WebDriver driver = new RemoteWebDriver(new URL("http://172.168.1.18:53613/wd/hub"), cap);
 		// driver = new RemoteWebDriver(new URL("http://172.168.0.114:5555/wd/hub"),cap);
 	}
