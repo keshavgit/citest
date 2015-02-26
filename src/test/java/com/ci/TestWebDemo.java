@@ -27,14 +27,10 @@ public class TestWebDemo {
 	{
 		
 //		driver.get("https://www.axisbank.co.in/");
-		try{
+		
 		driver.get("https://www.google.co.in/");
 		assertEquals("Google",driver.getTitle());
 		driver.findElement(By.id("lst-ib")).sendKeys("Selenium");
-		}catch(NoSuchElementException e)
-		{
-			System.out.println("element not recognized");
-		}
 		Thread.sleep(6000);
 	}
 	//@Ignore
