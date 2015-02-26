@@ -17,7 +17,9 @@ public class TestWebDemo {
 	@Before
 	public void setUp() throws Exception
 	{
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		DesiredCapabilities cap = DesiredCapabilities;
+		cap = DesiredCapabilities.firefox();
+    	        cap.setBrowserName("firefox");
 		cap.setPlatform(Platform.WINDOWS);
 		cap.setCapability("jenkins.label","redhat5 && amd64");
 		WebDriver driver = new RemoteWebDriver(new URL("http://172.168.1.18:53613/wd/hub"), cap);
