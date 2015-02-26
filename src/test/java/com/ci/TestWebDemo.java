@@ -30,7 +30,7 @@ public class TestWebDemo {
 		try{
 		driver.get("https://www.google.co.in/");
 		assertEquals("Google",driver.getTitle());
-		driver.findElement(By.id("lst-ib")).sendKeys("Selenium");
+		driver.findElement(By.name("q")).sendKeys("Selenium");
 		}catch(NoSuchElementException e)
 		{
 			System.out.println("element not recognized");
